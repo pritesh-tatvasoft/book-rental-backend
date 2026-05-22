@@ -22,7 +22,7 @@ export class Customer {
   email: string;
 
   @Column()
-  passwordHash: string;
+  password: string;
 
   @Column()
   firstName: string;

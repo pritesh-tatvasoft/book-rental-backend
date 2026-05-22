@@ -8,6 +8,7 @@ import validationSchema from './validation/env.validation';
 import { RentalsModule } from './rentals/rentals.module';
 import { CustomersModule } from './customers/customers.module';
 import { BooksModule } from './books/books.module';
+import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -15,6 +16,7 @@ import { BooksModule } from './books/books.module';
       validationSchema,
     }),
     DatabaseModule,
+    AuthModule,
     HealthModule,
     BooksModule,
     CustomersModule,

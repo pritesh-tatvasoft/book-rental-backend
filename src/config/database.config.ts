@@ -8,14 +8,15 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   username: process.env.DATABASE_USERNAME,
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_NAME,
-  entities: ['dist/**/*.entity.js'],
+  entities: [__dirname + '/../**/*.entity.{ts,js}'],
   synchronize: process.env.NODE_ENV === 'development',
   logging: process.env.NODE_ENV === 'development',
-  migrations: ['dist/migrations/*.js'],
+  migrations: [__dirname + '/../migrations/*{.ts,.js}'],
   migrationsRun: true,
 };
 
-export const mongooseUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/rental_booking_audit';
+export const mongooseUri =
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/rental_booking_audit';
 
 export const mongooseConfig: MongooseModuleOptions = {
   retryDelay: 5000,

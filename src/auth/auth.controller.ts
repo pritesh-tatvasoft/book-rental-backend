@@ -19,7 +19,20 @@ export class AuthController {
       example: {
         success: true,
         message: 'Request successful',
-        data: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
+        data: {
+          user: {
+            id: '3f8e8a70-1a50-4a3a-b0f8-123456789abc',
+            email: 'jane.doe@example.com',
+            firstName: 'Jane',
+            lastName: 'Doe',
+            address: '123 Main St',
+            profilePictureUrl: 'https://.../profile.png',
+            role: 'USER',
+            createdAt: '2026-05-22T12:00:00.000Z',
+            updatedAt: '2026-05-22T12:00:00.000Z',
+          },
+          accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
+        },
       },
     },
   })

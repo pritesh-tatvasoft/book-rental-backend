@@ -27,7 +27,15 @@ export class AuthService {
     }
 
     const payload = { sub: user.id, username: user.email, role: user.role };
-    return this.jwtService.sign(payload);
+
+    return {
+      message: 'Login successful',
+      data: {
+        user: user,
+        accessToken: this.jwtService.sign(payload),
+      },
+      
+    };
   }
 
   async register(registerDto: Record<string, any>) {

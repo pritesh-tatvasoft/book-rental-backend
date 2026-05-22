@@ -9,10 +9,9 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_NAME,
   entities: [__dirname + '/../**/*.entity.{ts,js}'],
-  synchronize: process.env.NODE_ENV === 'development',
-  logging: process.env.NODE_ENV === 'development',
   migrations: [__dirname + '/../migrations/*{.ts,.js}'],
-  migrationsRun: true,
+  synchronize: false,
+  logging: true,
 };
 
 export const mongooseUri =

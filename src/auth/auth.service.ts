@@ -18,12 +18,12 @@ export class AuthService {
     const user = await this.customerService.findByEmail(email);
 
     if (!user) {
-      throw new UnauthorizedException();
+      throw new UnauthorizedException("Account with this email doesn't exist");
     }
 
     const passwordValid = await bcrypt.compare(password, user.password);
     if (!passwordValid) {
-      throw new UnauthorizedException();
+      throw new UnauthorizedException("Invalid password");
     }
 
     const payload = { sub: user.id, username: user.email, role: user.role };

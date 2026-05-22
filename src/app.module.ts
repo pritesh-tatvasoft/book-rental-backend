@@ -9,6 +9,7 @@ import { RentalsModule } from './rentals/rentals.module';
 import { CustomersModule } from './customers/customers.module';
 import { BooksModule } from './books/books.module';
 import { AuthModule } from './auth/auth.module';
+import { UploadModule } from './upload/upload.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -21,6 +22,7 @@ import { AuthModule } from './auth/auth.module';
     BooksModule,
     CustomersModule,
     RentalsModule,
+    UploadModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -18,6 +18,7 @@ const validationSchema = Joi.object({
   SUPABASE_URL: Joi.string().default('https://your-supabase-url.supabase.co'),
   SUPABASE_SERVICE_KEY: Joi.string().default('your_supabase_service_key'),
   SUPABASE_ANON_KEY: Joi.string().default('your_supabase_anon_key'),
+  SUPABASE_STORAGE_BUCKET: Joi.string().default('public'),
 });
 
 export default validationSchema;
